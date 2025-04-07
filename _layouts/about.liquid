@@ -40,7 +40,6 @@ layout: default
 
     <div class="clearfix">{{ content }}</div>
 
-
     <!-- Latest posts -->
     {% if page.latest_posts and page.latest_posts.enabled %}
       <h2>
@@ -48,7 +47,6 @@ layout: default
       </h2>
       {% include latest_posts.liquid %}
     {% endif %}
-
 
     {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
       {% include newsletter.liquid center=true %}
