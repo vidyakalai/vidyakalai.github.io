@@ -69,13 +69,13 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
+      - name: Unfreeze Gemfile.lock
+        run: bundle config set --local frozen false
       - name: Setup Ruby 💎
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.3.5"
           bundler-cache: true
-      - name: Unfreeze Gemfile.lock
-        run: bundle config set frozen false
       - name: Setup Python 🐍
         uses: actions/setup-python@v5
         with:
