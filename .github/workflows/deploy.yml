@@ -69,8 +69,6 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
-      - name: Unfreeze Gemfile.lock
-        run: bundle config set --local frozen false
       - name: Setup Ruby 💎
         uses: ruby/setup-ruby@v1
         with:
