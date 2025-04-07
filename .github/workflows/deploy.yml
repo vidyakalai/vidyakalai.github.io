@@ -74,6 +74,8 @@ jobs:
         with:
           ruby-version: "3.3.5"
           bundler-cache: true
+      - name: Unfreeze Gemfile.lock
+        run: bundle config set frozen false
       - name: Setup Python 🐍
         uses: actions/setup-python@v5
         with:
@@ -91,6 +93,7 @@ jobs:
           sudo apt-get update && sudo apt-get install -y imagemagick
           pip3 install --upgrade nbconvert
           export JEKYLL_ENV=production
+          bundle install
           bundle exec jekyll build
       - name: Purge unused CSS 🧹
         run: |
